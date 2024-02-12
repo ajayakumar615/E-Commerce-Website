@@ -10,8 +10,8 @@ router.get('/', function (req, res, next) {
         res.render('admin/view-products', { admin: true, products })
     })
 });
-router.get('/add-product', function (req, res) {
-    res.render('admin/add-product')
+router.get('/add-products', function (req, res) {
+    res.render('admin/add-products')
 })
 router.post("/add-product", (req, res) => {
     console.log(req.body);
@@ -20,7 +20,7 @@ router.post("/add-product", (req, res) => {
         let image = req.files.Image;
         image.mv("./public/product-images/" + insertedId + ".jpg", (err, done) => {
             if (!err) {
-                res.render("admin/add-product");
+                res.render("admin/add-products");
             }
         });
     });
