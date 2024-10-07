@@ -15,11 +15,11 @@ router.get('/signup', (req, res) => {
     res.render('user/signup')
 })
 router.post('/signup', async (req, res) => {
-    try {
-      const data = await userHelpers.doSignup(req.body);
-      console.log(data);
-    } catch (err) {
-      console.error(err);
-    }
-  });
+  try {
+    const data = await userHelpers.doSignup(req.body);
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+});
 module.exports = router;
